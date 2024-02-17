@@ -1,9 +1,11 @@
+
 importScripts("https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js");
 importScripts(
   "https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js"
 );
-import toast from "react-hot-toast";
+
 firebase.initializeApp({
+
   apiKey: "AIzaSyC9eIhmokrKlLB_zL0mL-yReUKw0zqGpi4",
   authDomain: "employee-app-8a676.firebaseapp.com",
   projectId: "employee-app-8a676",
@@ -28,7 +30,6 @@ messaging.onBackgroundMessage((payload) => {
     body: payload.notification.body,
     // icon: "/logo.svg",
   };
-  toast(`${payload.notification.body}`);
 
   self.registration.showNotification(notificationTitle, notificationOptions);
 });
